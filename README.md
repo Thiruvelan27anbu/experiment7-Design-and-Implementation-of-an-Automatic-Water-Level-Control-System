@@ -113,7 +113,40 @@ The water-level information is displayed on the **Wokwi Serial Monitor** using U
 ---
 
 ## Program
+ORG 0000H
 
+START:
+    MOV P1,#0FFH
+    MOV P2,#00H
+
+AGAIN:
+    MOV A,P1
+
+    CJNE A,#30H, CHECK1
+
+CHECK1:
+    JC LOW
+
+    CJNE A,#70H, CHECK2
+
+CHECK2:
+    JC MEDIUM
+
+    SJMP HIGH
+
+LOW:
+    MOV P2,#01H
+    SJMP AGAIN
+
+MEDIUM:
+    MOV P2,#02H
+    SJMP AGAIN
+
+HIGH:
+    MOV P2,#04H
+    SJMP AGAIN
+
+END
 
 ## Circuit Connections
 
