@@ -10,7 +10,7 @@ To design and implement a **Water Level Indicator using STM32 Nucleo-L031K6** th
 
 - STM32 Nucleo-L031K6
 - Potentiometer to simulate the water-level sensor
-- Wokwi Simulator
+.- Wokwi Simulator
 - Virtual Serial Monitor
 - Connecting wires
 
